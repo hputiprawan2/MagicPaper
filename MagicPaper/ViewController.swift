@@ -55,6 +55,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             let videoScene = SKScene(size: CGSize(width: 480, height: 360))
             videoNode.position = CGPoint(x: videoScene.size.width/2,
                                          y: videoScene.size.height/2) // center of the scene
+            videoNode.yScale = -1.0 // scale to 1.0 so it's the same size, minus to flip
             // Add video node to video scene
             videoScene.addChild(videoNode)
             
