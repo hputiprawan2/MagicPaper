@@ -53,12 +53,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             videoNode.play()
             
             let videoScene = SKScene(size: CGSize(width: 480, height: 360))
+            videoNode.position = CGPoint(x: videoScene.size.width/2,
+                                         y: videoScene.size.height/2) // center of the scene
             // Add video node to video scene
             videoScene.addChild(videoNode)
             
             let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width,
                                  height: imageAnchor.referenceImage.physicalSize.height)
             plane.firstMaterial?.diffuse.contents = videoScene
+            
             let planeNode = SCNNode(geometry: plane)
             
             // Rotate the plane to 90 degrees to flat down to the surface
